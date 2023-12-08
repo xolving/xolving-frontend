@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
-import imnyang from "/images/imnyang.png";
-import kyutorials from "/images/kyutorials.png";
-import supernova from "/images/supernova.png";
+import imnyang from "../../../../public/images/imnyang.png";
+import kyutorials from "../../../../public/images/kyutorials.png";
+import supernova from "../../../../public/images/supernova.png";
 
 import styles from "./contributor.module.css";
 
