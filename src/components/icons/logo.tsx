@@ -1,0 +1,22 @@
+export const Logo = ({
+  width = 100,
+  height = 35,
+}: {
+  width?: number;
+  height?: number;
+}) => (
+  <svg width={width} height={height} viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M210.86 0L129.237 129.506C129.237 129.506 129.28 150.578 130.246 150.588C189.934 151.243 210.86 256 210.86 256H256V232.934L156.444 128L256 66.2741V0H210.86Z" fill="url(#paint0_linear_370_10)"/>
+<path d="M128 105.412C67.4932 104.753 45.1401 0 45.1401 0H0L102.029 128L51.0145 166.335L0 204.67V256H45.1401L129.237 129.506C129.237 129.506 128.966 105.422 128 105.412Z" fill="url(#paint1_linear_370_10)"/>
+<defs>
+<linearGradient id="paint0_linear_370_10" x1="128" y1="0" x2="128" y2="256" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA959"/>
+<stop offset="1" stop-color="#FF4E4E"/>
+</linearGradient>
+<linearGradient id="paint1_linear_370_10" x1="128" y1="0" x2="128" y2="256" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA959"/>
+<stop offset="1" stop-color="#FF4E4E"/>
+</linearGradient>
+</defs>
+</svg>
+);

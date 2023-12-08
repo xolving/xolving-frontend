@@ -1,0 +1,19 @@
+.subtitle {
+    padding: 1em;
+    color: white;
+    text-align: center;
+  }
+  
+  .contributor {
+    margin: 5px;
+    list-style: none;
+  }
+  
+  .contributorImage {
+    border-radius: 50px;
+  }
+  
+  .contributorList {
+    justify-content: center;
+    display: flex;
+  }

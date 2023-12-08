@@ -1,0 +1,7 @@
+.title {
+    padding: 1em;
+    background: linear-gradient(to right, rgb(249, 203, 110), rgb(255, 114, 114));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
