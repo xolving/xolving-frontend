@@ -1,5 +1,4 @@
 import { component$ } from "@builder.io/qwik";
-import enbraining from "/images/enbraining.png";
 import imnyang from "/images/imnyang.png";
 import kyutorials from "/images/kyutorials.png";
 import supernova from "/images/supernova.png";
@@ -12,9 +11,6 @@ export default component$(() => {
     <h4 class="subtitle">관심을 가져주신 분들</h4>
     <div class={styles}>
       <ul class="contributorList">
-        <li class="contributor">
-          <img class="contributorImage" src={ enbraining } width='100' height='100' alt='testA' /><hr/>enbraining
-        </li>
         <li class="contributor">
           <img class="contributorImage" src={ kyutorials } width='100' height='100' alt='testA' /><hr/>kyutorials
         </li>
