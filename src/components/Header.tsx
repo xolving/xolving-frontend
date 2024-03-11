@@ -15,15 +15,10 @@ const StyledHeader = styled.header`
     border-width: 1px;
     font-weight: 500;
     background-color: white;
-  }
-
-  .menu {
-    display: flex;
-    column-gap: 20px;
-  }
-
-  .account {
-    margin-left: auto;
+    border-radius: 1rem;
+    margin: 1rem;
+    position: sticky;
+    top: 1rem;
   }
 `;
 
@@ -32,13 +27,13 @@ export default function Header(){
         <StyledHeader>
             <a href="/"><Image src={xolving} alt="xolving" width={35} height={35} /></a>
             <p className="text-2xl text-slate-300 font-extralight">/</p>
-            <div className="menu">
+            <div className="flex gap-x-5">
                 <a href="/about"><p>소개</p></a>
                 <a href="/discord"><p>포럼</p></a>
                 <a href="/contribute"><p>기여하기</p></a>
             </div>
-            <div className="account">
-              <a href="/login"><p>Login</p></a>
+            <div className="ml-auto">
+              <a href="/login"><p>로그d</p></a>
             </div>
         </StyledHeader>
     )
