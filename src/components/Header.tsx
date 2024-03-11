@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import xolving from "@/public/xolving.svg"
 
 const StyledHeader = styled.header`
@@ -33,8 +33,8 @@ export default function Header(){
                 <a href="/contribute"><p>기여하기</p></a>
             </div>
             <div className="ml-auto">
-              <a href="/login"><p>로그d</p></a>
+              <a href="/login"><p>로그인</p></a>
             </div>
         </StyledHeader>
-    )
+  )
 }
