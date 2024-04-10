@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
-import localFont from 'next/font/local'
-import "./globals.css";
-import Header from "@/components/Header";
+import { Notice } from "@/components/Notice";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import type { Metadata } from "next";
+import localFont from 'next/font/local';
+import "./globals.css";
 
 const inter = localFont({ 
   src: '../public/fonts/PretendardVariable.woff2',
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="min-h-screen">
+          <Notice>🚧 현재 개발이 진행 중입니다.</Notice>
           <Header />
           {children}
         </div>
