@@ -13,7 +13,7 @@ const Content = styled.div`
     border-width: 1px;
     font-weight: 500;
     background-color: white;
-    border-radius: 1rem;
+    border-radius: 0.7rem;
   }
 `;
 
