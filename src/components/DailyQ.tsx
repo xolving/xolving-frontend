@@ -1,6 +1,8 @@
 "use client"
 
+import { fetchNews, News } from '@/libs/supabase';
 import Link from "next/link";
+import { useEffect, useState } from 'react';
 import styled from "styled-components";
 
 const Content = styled.div`
@@ -16,15 +18,26 @@ const Content = styled.div`
 `;
 
 export default function DailyQ(){
+  const [news, setNews] = useState<News[]>([]);
+
+  useEffect(() => {
+    const getNews = async () => {
+      const news = await fetchNews() ?? []
+      setNews(news);
+    }
+
+    getNews();
+  })
+
   return (
     <div className="mx-80">
-      <h1 className="text-3xl font-medium">오늘의 주제</h1>
+      <h1 className="text-3xl font-medium">최신 글</h1>
       <hr className="my-5" />
       <div>{
-        mocks.map( mock => 
-          <Link href={`/${mock.id}`}>
-            <Content key={mock.id}>
-              <h1 className="text-xl">{mock.title}</h1>
+        news?.map( news => 
+          <Link href={`/${news.id}`} key={news.id}>
+            <Content>
+              <h1 className="text-xl">{news.title}</h1>
             </Content>
           </Link>
         )
