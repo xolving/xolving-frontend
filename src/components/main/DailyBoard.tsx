@@ -23,7 +23,7 @@ export default function DailyBoard({title, type}: {title: string, type?: number}
 
   useEffect(() => {
     const getNews = async () => {
-      const news = await fetchNews() ?? []
+      const news = (await fetchNews())?.slice(0, 2) ?? []
       setNews(news);
       setLoading(false);
     }

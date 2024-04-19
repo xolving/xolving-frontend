@@ -23,7 +23,7 @@ export default function DailyNews({title, type}: {title: string, type?: number})
 
   useEffect(() => {
     const getNews = async () => {
-      const news = await fetchNews() ?? []
+      const news = (await fetchNews())?.slice(0, 5) ?? []
       setNews(news);
       setLoading(false);
     }

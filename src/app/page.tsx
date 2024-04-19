@@ -1,5 +1,5 @@
-import DailyBoard from "@/components/DailyBoard";
-import DailyNews from "@/components/DailyNews";
+import DailyBoard from "@/components/main/DailyBoard";
+import DailyNews from "@/components/main/DailyNews";
 
 export default function Home() {
   return (
