@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 const Content = styled.div`
   && {
-    padding: 12px 120px 12px 30px;
+    padding: 30px 240px 30px 30px;
     margin-bottom: 10px;
     column-gap: 18px;
     border-width: 1px;
@@ -17,7 +17,7 @@ const Content = styled.div`
   }
 `;
 
-export default function DailyQ({title, type}: {title: string, type?: number}){
+export default function DailyBoard({title, type}: {title: string, type?: number}){
   const [news, setNews] = useState<News[]>([]);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function DailyQ({title, type}: {title: string, type?: number}){
         news?.map( news => 
           <Link href={`/${news.id}`} key={news.id}>
             <Content>
-              <h1 className="text-lg">{news.title}</h1>
+              <h1 className="text-xl">{news.title}</h1>
             </Content>
           </Link>
         )
