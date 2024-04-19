@@ -19,11 +19,13 @@ const Content = styled.div`
 
 export default function DailyNews({title, type}: {title: string, type?: number}){
   const [news, setNews] = useState<News[]>([]);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     const getNews = async () => {
       const news = await fetchNews() ?? []
       setNews(news);
+      setLoading(false);
     }
 
     getNews();
@@ -34,7 +36,11 @@ export default function DailyNews({title, type}: {title: string, type?: number})
       <h1 className="text-3xl font-medium">{title}</h1>
       <hr className="my-5" />
       <div>{
-        news?.map( news => 
+        isLoading ? 
+        <Content>
+              <h1 className="text-lg">로딩 중...</h1>
+        </Content> 
+        : news?.map( news => 
           <Link href={`/${news.id}`} key={news.id}>
             <Content>
               <h1 className="text-lg">{news.title}</h1>
@@ -45,18 +51,3 @@ export default function DailyNews({title, type}: {title: string, type?: number})
     </div>
   )
 }
-
-const mocks = [
-  {
-    id: 1,
-    title: "Git Flow와 Github Flow의 차이점이 뭘까?",
-  },
-  {
-    id: 2,
-    title: "Github와 Gitlab의 장단점이 뭘까?",
-  },
-  {
-    id: 3,
-    title: "Next.js를 쓰면 뭐가 좋을까?",
-  }
-]
