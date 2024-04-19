@@ -28,7 +28,8 @@ export default function Header(){
             <a href="/"><Image src={xolving} alt="xolving" width={35} height={35} /></a>
             <p className="text-2xl text-slate-300 font-extralight">/</p>
             <div className="flex gap-x-5">
-                <a href="/about"><p>솔빙 소개</p></a>
+                <a href="/about"><p>소개</p></a>
+                <a href="/community"><p>커뮤니티</p></a>
                 <a href="/news"><p>뉴스</p></a>
                 <a href="/learn"><p>강의</p></a>
             </div>

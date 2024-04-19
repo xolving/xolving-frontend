@@ -7,8 +7,8 @@ import styled from "styled-components";
 
 const Content = styled.div`
   && {
-    padding: 12px 120px 12px 30px;
-    margin-bottom: 10px;
+    padding: 8px 120px 8px 30px;
+    margin-bottom: 4px;
     column-gap: 18px;
     border-width: 1px;
     font-weight: 500;
@@ -17,7 +17,7 @@ const Content = styled.div`
   }
 `;
 
-export default function DailyQ({title, type}: {title: string, type?: number}){
+export default function DailyNews({title, type}: {title: string, type?: number}){
   const [news, setNews] = useState<News[]>([]);
 
   useEffect(() => {
