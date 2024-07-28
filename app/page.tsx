@@ -2,7 +2,6 @@ export default function Home() {
   return (
     <main>
       <div className="left-[-70rem] top-[-40rem] w-[120rem] h-[120rem] from-[#4942ad6b] via-[#00000000] bg-gradient-radial rounded-full fixed z-[-1] bg-blend-overlay" />
-      {/* <div className="left-[22rem] top-[-6rem] w-[50rem] h-[50rem] from-[#8f42ad6b] via-[#00000000] bg-gradient-radial rounded-full fixed z-[-1] bg-blend-overlay" /> */}
       <div className="left-[30rem] top-[-5rem] w-[120rem] h-[120rem] from-[#6f42ad6b] via-[#00000000] bg-gradient-radial rounded-full fixed z-[-1] bg-blend-overlay" />
 
       <div className="text-center mt-[10rem] md:font-6xl sm:text-5xl">

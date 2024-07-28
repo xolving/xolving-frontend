@@ -3,7 +3,7 @@ import HeaderIcon from "./Header-Icon";
 
 export default function Header() {
   return (
-    <header className="py-2 px-16 items-center grid grid-cols-3 border-b border-b-neutral-900">
+    <header className="py-2 px-16 items-center md:grid hidden grid-cols-3 border-b border-b-neutral-900">
       <Link href={"/"}>
         <HeaderIcon width={120} height={40} />
       </Link>
