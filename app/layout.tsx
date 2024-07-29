@@ -1,8 +1,8 @@
+import { NavigationMenuDemo } from "@/components/Header/Header";
 import type { Metadata } from "next";
 import LocalFont from "next/font/local";
-import Header from "./components/Header/Header";
-import "./globals.css";
 import Script from "next/script";
+import "./globals.css";
 
 const inter = LocalFont({
   src: "../public/fonts/PretendardVariable.woff2",
@@ -33,7 +33,7 @@ export default function RootLayout({
         }}
       />
       <body className={inter.className}>
-        <Header />
+        <NavigationMenuDemo />
         {children}
       </body>
     </html>

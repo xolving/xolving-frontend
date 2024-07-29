@@ -7,12 +7,9 @@ export default function Home() {
       <div className="text-center mt-[10rem] md:font-6xl sm:text-5xl">
         <div className="mb-8">
           <h1 className="font-black md:mb-3 text-purple-600">
-            가상서버 호스팅
+            개발자 커뮤니티
           </h1>
           <p className="font-bold">현재 베타 버전입니다</p>
-        </div>
-        <div className="mt-[3rem] mx-auto text-base border rounded-full inline px-5 py-2 border-neutral-700 text-neutral-50">
-          자세히 알아보기 →
         </div>
       </div>
     </main>
