@@ -9,8 +9,8 @@ const inter = LocalFont({
 });
 
 export const metadata: Metadata = {
-  title: "Facorb Cloud",
-  description: "개발자를 위한 클라우드 서비스",
+  title: "Xolving Community",
+  description: "개발자를 위한 커뮤니티",
 };
 
 export default function RootLayout({
