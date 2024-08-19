@@ -1,8 +1,10 @@
 'use client';
 
 import ExternalTitle from '@/components/External-Title';
+import { PhMagnifyingGlass } from '@/components/Icons';
 import { useEffect, useState } from 'react';
 import { mocks } from './mocks/posts';
+import { recruit } from './mocks/recruit';
 
 export default function Home() {
   const maxPage = mocks.length / 10;
@@ -49,10 +51,10 @@ export default function Home() {
           {/* 오른쪽 메뉴 */}
           <div className="bg-neutral-800 p-5 rounded-sm border-b border-b-neutral-700">
             <ExternalTitle href="/recruit">홍보 및 구인구직</ExternalTitle>
-            <div className="text-sm">
-              {mocks.slice(0, 4).map((mock) => (
-                <div key={mock.title}>
-                  <h1>{mock.title}</h1>
+            <div>
+              {recruit.slice(0, 10).map((mock, index) => (
+                <div key={index} className="flex items-center">
+                  <h1 className="text-base">{mock.title}</h1>
                 </div>
               ))}
             </div>
@@ -60,29 +62,27 @@ export default function Home() {
         </div>
 
         <div className="bg-neutral-800 p-5 rounded-sm border-b border-b-neutral-700 grid">
-          <div className="text-sm grid">
-            {posts.map((mock) => (
-              <div key={mock.title} className="py-2">
-                <div className="flex mb-1 gap-x-2">
-                  <div className="bg-neutral-600 rounded-2xl py-0 px-3 text-sm inline">
-                    {mock.category}
-                  </div>
-                  <p>/</p>
-                  <div className="flex gap-x-2">
-                    {mock.tags.map((tag: string) => (
-                      <div
-                        key={tag}
-                        className="bg-neutral-600 rounded-2xl py-0 px-3 text-sm inline"
-                      >
-                        {`#${tag}`}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <h1 className="font-semibold text-base">{mock.title}</h1>
-                <h2 className="text-neutral-300 text-sm">{mock.date}</h2>
+          <div className="text-sm">
+            <div className="mb-2 flex">
+              <div className="relative ml-auto">
+                <PhMagnifyingGlass className="absolute" scope={20} />
+                <input className="bg-neutral-800 border-b border-b-neutral-600 pl-6 pb-2 outline-none md:w-60 w-full"></input>
               </div>
-            ))}
+            </div>
+            <div className="grid divide-y divide-neutral-700">
+              {posts.map((mock) => (
+                <div key={mock.title} className="py-2">
+                  <div className="flex mb-1 gap-x-2">
+                    <h2 className="text-neutral-300 text-sm">{mock.date}</h2>
+                    <p className="text-neutral-200">/</p>
+                    <div className="bg-neutral-600 rounded-2xl py-0 px-3 text-sm inline">
+                      {mock.category}
+                    </div>
+                  </div>
+                  <h1 className="font-semibold text-base">{mock.title}</h1>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="mx-auto text-lg flex gap-x-2 divide-x-2 font-mono">
             {pageArray.map((value) => (
