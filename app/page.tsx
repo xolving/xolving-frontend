@@ -2,13 +2,16 @@
 
 import ExternalTitle from '@/components/External-Title';
 import { PhMagnifyingGlass } from '@/components/Icons';
-import { useEffect, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { Suspense, useEffect, useState } from 'react';
 import { mocks } from './mocks/posts';
 import { recruit } from './mocks/recruit';
 
 export default function Home() {
   const maxPage = mocks.length / 10;
   const pageArray = Array.from({ length: maxPage + 1 }, (_, i) => i + 1);
+  const router = useRouter();
+  const params = useSearchParams();
   const [currentPage, setCurrentPage] = useState(1);
   const [posts, setPosts] = useState<any[]>([]);
 
@@ -16,6 +19,12 @@ export default function Home() {
     // TODO 페이지네이션은 나중에 백엔드에 요청하는 식으로 변경해야한다.
     setPosts(mocks.slice(currentPage * 10 - 10, currentPage * 10));
   }, [currentPage]);
+
+  useEffect(() => {
+    if (params.get('page') != undefined) {
+      setCurrentPage(Number.parseInt(params.get('page')!));
+    }
+  }, [params.get('page')]);
 
   return (
     <main className="grid text-neutral-200 md:mx-36 mx-4">
@@ -70,26 +79,31 @@ export default function Home() {
               </div>
             </div>
             <div className="grid divide-y divide-neutral-700">
-              {posts.map((mock) => (
-                <div key={mock.title} className="py-2">
-                  <div className="flex mb-1 gap-x-2">
-                    <h2 className="text-neutral-300 text-sm">{mock.date}</h2>
-                    <p className="text-neutral-200">/</p>
-                    <div className="bg-neutral-600 rounded-2xl py-0 px-3 text-sm inline">
-                      {mock.category}
+              <Suspense>
+                {posts.map((mock) => (
+                  <div key={mock.title} className="py-2">
+                    <div className="flex mb-1 gap-x-2">
+                      <h2 className="text-neutral-300 text-sm">{mock.date}</h2>
+                      <p className="text-neutral-200">/</p>
+                      <div className="bg-neutral-600 rounded-2xl py-0 px-3 text-sm inline">
+                        {mock.category}
+                      </div>
                     </div>
+                    <h1 className="font-semibold text-base">{mock.title}</h1>
                   </div>
-                  <h1 className="font-semibold text-base">{mock.title}</h1>
-                </div>
-              ))}
+                ))}
+              </Suspense>
             </div>
           </div>
           <div className="mx-auto text-lg flex gap-x-2 divide-x-2 font-mono">
             {pageArray.map((value) => (
               <p
                 key={value}
+                className={`${
+                  currentPage == value ? 'text-neutral-500' : 'text-white'
+                }`}
                 onClick={() => {
-                  setCurrentPage(value);
+                  router.push(`?page=${value}`);
                 }}
               >
                 {value}
