@@ -1,3 +1,39 @@
+export function IcRoundNavigateNext({ scope }: { scope: any }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={scope * 1}
+      height={scope * 1}
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="currentColor"
+        d="M9.31 6.71a.996.996 0 0 0 0 1.41L13.19 12l-3.88 3.88a.996.996 0 1 0 1.41 1.41l4.59-4.59a.996.996 0 0 0 0-1.41L10.72 6.7c-.38-.38-1.02-.38-1.41.01"
+      ></path>
+    </svg>
+  );
+}
+
+export function IconamoonLinkExternal({ scope }: { scope: any }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={scope * 1}
+      height={scope * 1}
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M11 4H4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M9 15L20 4m-5 0h5v5"
+      ></path>
+    </svg>
+  );
+}
+
 export function IcRoundKeyboardDoubleArrowDown({ scope }: { scope: any }) {
   return (
     <svg
