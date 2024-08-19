@@ -3,12 +3,21 @@
 import ContinueButton from '@/components/account/Continue-Button';
 import { IcRoundNavigateNext } from '@/components/Icons';
 import Link from 'next/link';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
+import Turnstile from 'react-turnstile';
 
 export default function Page() {
-  const onSubmit = useCallback((formDate: FormData) => {
-    formDate.get('');
-  }, []);
+  const [isValid, setValid] = useState(false);
+
+  // 1: Turnstile 미인증
+  const [error, setError] = useState<number[]>([]);
+  const onSubmit = useCallback(
+    (formDate: FormData) => {
+      if (!isValid) setError([...error, 1]);
+      isValid && console.log('wow');
+    },
+    [isValid],
+  );
 
   return (
     <main className="grid">
@@ -50,7 +59,15 @@ export default function Page() {
             className="bg-[#00000000] border-b border-b-neutral-600 focus:py-2 outline-none duration-300 w-full"
           ></input>
         </div>
-        <ContinueButton />
+        <Turnstile
+          theme="dark"
+          className="h-12"
+          sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+          onVerify={() => {
+            setValid(true);
+          }}
+        />
+        <ContinueButton error={error} />
       </form>
     </main>
   );
