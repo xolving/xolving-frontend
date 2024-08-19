@@ -60,7 +60,7 @@ export default function Home() {
         </div>
 
         <div className="bg-neutral-800 p-5 rounded-sm border-b border-b-neutral-700 grid">
-          <div className="text-sm grid divide-y">
+          <div className="text-sm grid">
             {posts.map((mock) => (
               <div key={mock.title} className="py-2">
                 <div className="flex mb-1 gap-x-2">
@@ -84,7 +84,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div className="mx-auto text-lg flex gap-x-2 divide-x-2">
+          <div className="mx-auto text-lg flex gap-x-2 divide-x-2 font-mono">
             {pageArray.map((value) => (
               <p
                 key={value}

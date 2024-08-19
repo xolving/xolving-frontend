@@ -1,16 +1,17 @@
-import { NavigationMenuDemo } from "@/components/Header/Header";
-import type { Metadata } from "next";
-import LocalFont from "next/font/local";
-import Script from "next/script";
-import "./globals.css";
+import { Footer } from '@/components/footer/Footer';
+import { Header } from '@/components/header/Header';
+import type { Metadata } from 'next';
+import LocalFont from 'next/font/local';
+import Script from 'next/script';
+import './globals.css';
 
 const inter = LocalFont({
-  src: "../public/fonts/PretendardVariable.woff2",
+  src: '../public/fonts/PretendardVariable.woff2',
 });
 
 export const metadata: Metadata = {
-  title: "Xolving Community",
-  description: "개발자를 위한 커뮤니티",
+  title: 'Xolving Community',
+  description: '개발자를 위한 커뮤니티',
 };
 
 export default function RootLayout({
@@ -33,8 +34,9 @@ export default function RootLayout({
         }}
       />
       <body className={inter.className}>
-        <NavigationMenuDemo />
-        {children}
+        <Header />
+        <div className="min-h-screen">{children}</div>
+        <Footer />
       </body>
     </html>
   );
