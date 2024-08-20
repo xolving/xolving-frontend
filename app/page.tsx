@@ -1,5 +1,6 @@
 'use client';
 
+import Banner from '@/components/Banner';
 import ExternalTitle from '@/components/External-Title';
 import { PhMagnifyingGlass } from '@/components/Icons';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -111,6 +112,7 @@ export default function Home() {
             ))}
           </div>
         </div>
+        <Banner />
       </div>
     </main>
   );

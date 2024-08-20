@@ -14,7 +14,9 @@ export default function Page() {
   const onSubmit = useCallback(
     (formDate: FormData) => {
       if (!isValid) setError([...error, 1]);
-      isValid && console.log('wow');
+      else {
+        // 여기서 로그인 API로 요청
+      }
     },
     [isValid],
   );
