@@ -1,4 +1,5 @@
 import { Footer } from '@/components/footer/Footer';
+import { SubHeader } from '@/components/header/\bSub-Header';
 import { Header } from '@/components/header/Header';
 import type { Metadata } from 'next';
 import LocalFont from 'next/font/local';
@@ -35,6 +36,7 @@ export default function RootLayout({
       />
       <body className={inter.className}>
         <Header />
+        <SubHeader />
         <div className="min-h-screen">{children}</div>
         <Footer />
       </body>

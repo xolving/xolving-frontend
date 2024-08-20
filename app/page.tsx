@@ -32,7 +32,7 @@ export default function Home() {
       <div className="left-[-70rem] top-[-40rem] w-[120rem] h-[120rem] from-[#4942ad6b] via-[#00000000] bg-gradient-radial rounded-full fixed z-[-1] bg-blend-overlay" />
       <div className="left-[30rem] top-[-5rem] w-[120rem] h-[120rem] from-[#6f42ad6b] via-[#00000000] bg-gradient-radial rounded-full fixed z-[-1] bg-blend-overlay" />
 
-      <div className="grid gap-y-4 mt-16">
+      <div className="grid gap-y-4 mt-4">
         {/* 왼쪽 메뉴 */}
         <div className="grid md:grid-cols-2 grid-cols-1 gap-x-4">
           <div>
@@ -60,7 +60,7 @@ export default function Home() {
 
           {/* 오른쪽 메뉴 */}
           <div className="bg-neutral-800 p-5 rounded-sm border-b border-b-neutral-700">
-            <ExternalTitle href="/recruit">홍보 및 구인구직</ExternalTitle>
+            <ExternalTitle href="/recruit">구인구직</ExternalTitle>
             <div>
               {recruit.slice(0, 10).map((mock, index) => (
                 <div key={index} className="flex items-center">
@@ -74,6 +74,9 @@ export default function Home() {
         <div className="bg-neutral-800 p-5 rounded-sm border-b border-b-neutral-700 grid">
           <div className="text-sm">
             <div className="mb-2 flex">
+              <div>
+                <ExternalTitle href="/board">게시판</ExternalTitle>
+              </div>
               <div className="relative ml-auto">
                 <PhMagnifyingGlass className="absolute" scope={20} />
                 <input className="bg-neutral-800 border-b border-b-neutral-600 pl-6 pb-2 outline-none md:w-60 w-full"></input>
