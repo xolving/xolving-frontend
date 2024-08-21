@@ -1,12 +1,12 @@
 'use client';
 
 import Banner from '@/components/Banner';
+import DefaultBlock from '@/components/Default-Block';
 import ExternalTitle from '@/components/External-Title';
 import { PhMagnifyingGlass } from '@/components/Icons';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
 import { mocks } from './mocks/posts';
-import { recruit } from './mocks/recruit';
 
 export default function Home() {
   const maxPage = mocks.length / 10;
@@ -32,11 +32,11 @@ export default function Home() {
       <div className="left-[-70rem] top-[-40rem] w-[120rem] h-[120rem] from-[#4942ad6b] via-[#00000000] bg-gradient-radial rounded-full fixed z-[-1] bg-blend-overlay" />
       <div className="left-[30rem] top-[-5rem] w-[120rem] h-[120rem] from-[#6f42ad6b] via-[#00000000] bg-gradient-radial rounded-full fixed z-[-1] bg-blend-overlay" />
 
-      <div className="grid gap-y-4 mt-4">
+      <div className="grid gap-y-8 mt-8">
         {/* 왼쪽 메뉴 */}
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-x-4">
-          <div>
-            <div className="bg-neutral-800 p-5 rounded-sm border-b border-b-neutral-700">
+        <div className="grid md:grid-cols-4 grid-cols-1 gap-x-4">
+          <div className="md:col-span-3 col-span-1">
+            <DefaultBlock>
               <ExternalTitle href={'/notice'}>공지사항</ExternalTitle>
               <div className="text-sm">
                 {mocks.slice(0, 4).map((mock) => (
@@ -45,8 +45,8 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-            </div>
-            <div className="bg-neutral-800 p-5 rounded-sm border-b border-b-neutral-700">
+            </DefaultBlock>
+            <DefaultBlock>
               <ExternalTitle href={'/update'}>업데이트 내역</ExternalTitle>
               <div className="text-sm">
                 {mocks.slice(0, 4).map((mock) => (
@@ -55,23 +55,24 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-            </div>
+            </DefaultBlock>
           </div>
 
           {/* 오른쪽 메뉴 */}
-          <div className="bg-neutral-800 p-5 rounded-sm border-b border-b-neutral-700">
-            <ExternalTitle href="/recruit">구인구직</ExternalTitle>
-            <div>
-              {recruit.slice(0, 10).map((mock, index) => (
-                <div key={index} className="flex items-center">
-                  <h1 className="text-base">{mock.title}</h1>
-                </div>
-              ))}
+          <DefaultBlock className="grid w-full">
+            <div className="m-auto text-center">
+              <div className="w-24 h-24 bg-white rounded-full" />
+              <div className="mt-4">
+                <h1 className="text-lg font-semibold text-neutral-50">
+                  @velo_ox
+                </h1>
+                <h2 className="text-sm text-neutral-400">나이츠 | 109p</h2>
+              </div>
             </div>
-          </div>
+          </DefaultBlock>
         </div>
 
-        <div className="bg-neutral-800 p-5 rounded-sm border-b border-b-neutral-700 grid">
+        <DefaultBlock className="grid">
           <div className="text-sm">
             <div className="mb-2 flex">
               <div>
@@ -114,7 +115,7 @@ export default function Home() {
               </p>
             ))}
           </div>
-        </div>
+        </DefaultBlock>
         <Banner />
       </div>
     </main>
