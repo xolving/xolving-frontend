@@ -10,10 +10,10 @@ export default function Page() {
   const [isValid, setValid] = useState(false);
 
   // 1: Turnstile 미인증
-  const [error, setError] = useState<number[]>([]);
+  const [error, setError] = useState<number | null>(null);
   const onSubmit = useCallback(
     (formDate: FormData) => {
-      if (!isValid) setError([...error, 1]);
+      if (!isValid) setError(1);
       else {
         // 여기서 로그인 API로 요청
       }

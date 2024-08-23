@@ -1,3 +1,32 @@
+export function IconamoonArrowDown5Circle({
+  scope,
+  className,
+}: {
+  scope: any;
+  className?: string;
+}) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      width={scope * 1}
+      height={scope * 1}
+      viewBox="0 0 24 24"
+    >
+      <g
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      >
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="m9 12l3 3m0 0l3-3m-3 3V9"></path>
+      </g>
+    </svg>
+  );
+}
+
 export function PhMagnifyingGlass({
   scope,
   className,

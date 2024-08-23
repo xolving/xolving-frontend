@@ -1,5 +1,4 @@
 import { Footer } from '@/components/footer/Footer';
-import { SubHeader } from '@/components/header/\bSub-Header';
 import { Header } from '@/components/header/Header';
 import type { Metadata } from 'next';
 import LocalFont from 'next/font/local';
@@ -11,8 +10,8 @@ const inter = LocalFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Xolving Community',
-  description: '개발자를 위한 커뮤니티',
+  title: 'Xolving',
+  description: '창작을 즐기는 사람들의 커뮤니티',
 };
 
 export default function RootLayout({
@@ -36,7 +35,6 @@ export default function RootLayout({
       />
       <body className={inter.className}>
         <Header />
-        <SubHeader />
         <div className="min-h-screen">{children}</div>
         <Footer />
       </body>

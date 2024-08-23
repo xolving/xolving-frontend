@@ -9,7 +9,7 @@ export default function Page() {
   // 1: 비밀번호가 서로 일치하지 않음
   // 2: 비밀번호 정규식이 일치하지 않음
   // 3: 이메일 정규식이 일치하지 않음
-  const [error, setError] = useState<number[]>([]);
+  const [error, setError] = useState<number | null>(null);
   const emailRegex =
     /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
   const passwordRegex =
@@ -20,10 +20,10 @@ export default function Page() {
     const password = formData.get('password')?.valueOf() as string;
     const rePassword = formData.get('repassword')?.valueOf();
 
-    if (!emailRegex.test(email)) setError([...error, 2]);
+    if (!emailRegex.test(email)) setError(2);
     else if (password != rePassword || !passwordRegex.test(password))
-      setError([...error, 1]);
-    else setError([]);
+      setError(1);
+    else setError(null);
   }, []);
 
   return (
@@ -53,10 +53,10 @@ export default function Page() {
               WebkitTextFillColor: '#fff',
             }}
             className={`bg-[#00000000] border-b ${
-              error.includes(2) ? 'border-b-red-600' : 'border-b-neutral-600'
+              error == 2 ? 'border-b-red-600' : 'border-b-neutral-600'
             } focus:py-2 outline-none duration-300 w-full`}
           ></input>
-          {error.includes(2) && (
+          {error == 2 && (
             <p className="text-red-600 text-sm">이메일이 올바르지 않습니다.</p>
           )}
         </div>
@@ -74,10 +74,10 @@ export default function Page() {
             }}
             type="password"
             className={`placeholder:opacity-50 placeholder:text-sm bg-[#00000000] border-b ${
-              error.includes(1) ? 'border-b-red-600' : 'border-b-neutral-600'
+              error == 1 ? 'border-b-red-600' : 'border-b-neutral-600'
             } focus:py-2 outline-none duration-300 w-full`}
           ></input>
-          {error.includes(1) && (
+          {error == 1 && (
             <p className="text-red-600 text-sm">
               비밀번호가 일치하지 않거나 올바르지 않습니다.
             </p>
@@ -97,7 +97,7 @@ export default function Page() {
             }}
             type="password"
             className={`placeholder:opacity-50 placeholder:text-sm bg-[#00000000] border-b ${
-              error.includes(1) ? 'border-b-red-600' : 'border-b-neutral-600'
+              error == 1 ? 'border-b-red-600' : 'border-b-neutral-600'
             } focus:py-2 outline-none duration-300 w-full`}
           ></input>
         </div>
